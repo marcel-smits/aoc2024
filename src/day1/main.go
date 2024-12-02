@@ -43,14 +43,13 @@ func p1(path string) float64 {
 	sort.Ints(left)
 	sort.Ints(right)
 
-	var difVal float64 = 0
+	var sum float64 = 0
 
 	for i := 0; i < len(left); i++ {
 		j := float64(left[i] - right[i])
-		difVal += math.Abs(j)
+		sum += math.Abs(j)
 	}
-	print(difVal)
-	return difVal
+	return sum
 }
 
 func p2(path string) int {
@@ -79,10 +78,8 @@ func p2(path string) int {
 		}
 	}
 
-	// Map to store counts
 	counts := make(map[int]int)
 
-	// Count occurrences
 	for _, num := range right {
 		counts[num]++
 	}
